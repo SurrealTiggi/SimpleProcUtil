@@ -12,3 +12,4 @@ Installation would also be straight forward by use of rpm.
 8) Fallbacks to external libraries in case they aren't found. Right now we exit terribly if libraries aren't present. We could use more primitive ways of gathering data (eg. loop through /proc filesystem, or use subprocess to pass commands directly to bash (such as /bin/ps) to be parsed for required info.
 9) Implement timeouts on any risky functions. Ideally we want to output as often as need be. If a method takes too long to work, it should exit according to whatever timeout rules are enforced.
 10) Edge cases. Thorough unit tests would need to be done to cover all weird unexpected edge cases, such as pidfile not being removed correctly.
+11) Restlet server when running as a daemon to return JSON or otherwise to allow other applications to leverage off of it.
