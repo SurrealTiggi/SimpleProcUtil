@@ -21,6 +21,11 @@ numpy - for math
 You can run this in a few ways. Run with -h for all options. In each case it gathers info every 5 seconds, returning an average of each metric every 30 seconds.
 
 ```
+chmod +x SimpleProcUtil.py
+```
+Ensure main script is executable by your user
+
+```
 $ ./SimpleProcUtil.py
 ```
 Will run as the default and monitor 10 random processes for 10 runs
