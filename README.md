@@ -13,8 +13,7 @@ Some external libraries are required to run. They can be easily installed using 
 ```
 pip - for installations
 psutil - for process queries
-numpy
-interruptingcow
+numpy - for math
 ```
 
 ### How to run
@@ -22,22 +21,22 @@ interruptingcow
 You can run this in a few ways. Run with -h for all options. In each case it gathers info every 5 seconds, returning an average of each metric every 30 seconds.
 
 ```
-./SimpleProcUtil.py
+$ ./SimpleProcUtil.py
 ```
 Will run as the default and monitor 10 random processes for 10 runs
 
 ```
-./SimpleProcUtil.py -p 123
+$ ./SimpleProcUtil.py -p 123
 ```
 Will monitor a single pid 123 for 10 runs
 
 ```
-./SimpleProcUtil.py -e mysql -r 5
+$ ./SimpleProcUtil.py -e mysql -r 5
 ```
 Will monitor all processes matching 'mysql' for 5 runs
 
 ### TODO
-Seee the [TODO.txt] (TODO.txt) file for details
+See the [TODO.txt] (TODO.txt) file for details
 
 ## Built With
 
