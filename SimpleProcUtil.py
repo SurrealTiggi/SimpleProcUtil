@@ -35,16 +35,6 @@ except ImportError as e:
 from SimpleConfig import SimpleConfigBuilder
 #from SimpleProcPrinter import SimplePrinter
 
-'''
-TODO:
-    3) If config file exists, get options from there, else exit and request cmd line options
-    4) ThreadQueue in case we get a boatload of pids to monitor
-    6) Virtualenv???
-    7) Proper library structure???
-    9) Input validation, better exception handling
-    8) Systemctl integration:
-        * restlet to return json for other monitoring software to call (eg. zabbix, telegraf, prometheus...
-'''
 # Global Objects
 #####################
 myProcDict = {}
@@ -211,7 +201,7 @@ def run(argv=None):
 
     for _ in range(runs):
         print("=" * 50)
-        print("%s || [INFO] || Gathering data: %s/%s") % (now(), _, runs)
+        print("%s || [INFO] || Gathering data: %s/%s") % (now(), _ + 1, runs)
         runtime = myOutputInterval/myQueryInterval
 
         # Create thread per pid 
@@ -247,9 +237,6 @@ def getRegexPids(regex):
         except Exception as e:
             print("%s || [ERROR] || %s : Unable to find reguested process...") % (now(), e)
     return nameList
-
-
-    return [5571, 936]
 
 def getProcInfo(procinfo, runtime):
     """ Threader to handle simultanous queries for cpu/mem stats"""
